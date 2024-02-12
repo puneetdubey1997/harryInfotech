@@ -1,0 +1,207 @@
+<style>
+
+    
+
+
+    /* POPPINS FONT */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    font-family: 'Poppins', sans serif;
+}
+body{
+    background-image: url("https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 87vh;
+    
+}
+
+
+.container{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 0 30px;
+}
+span{
+    color: #000000;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+}
+header{
+    color: #e2dede;
+    font-size: 30px;
+    display: center;
+    justify-content: center;
+    padding: 10px 8 25px 80;
+}
+.input-field{
+    display: flex;
+    flex-direction: column;
+}
+.input-field .input{
+    height: 45px;
+    width: 87%;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: #ffffff;
+    padding: 0 0 0 42px;
+    background: rgba(53, 49, 49, 0.372)
+}
+i{
+    position: relative;
+    top: -30px;
+    left: 18px;
+    color: #000000;
+}
+::-webkit-input-placeholder{
+    color: #ffffff;
+}
+.submit{
+    border: none;
+    border-radius: 30px;
+    font-size: 22px;
+    height: 45px;
+    outline: none;
+    width: 87%;
+    background: rgb(255, 22, 10);
+    cursor: pointer;
+    transition: .3s;
+}
+.submit:hover{
+    box-shadow: 1px 5px 7px 1px rgb(255, 255, 255);
+}
+.bottom{
+    display: flex   ;
+    flex-direction: rowrow-reverse;
+    justify-content: space-between;
+    font-size: small;
+    color: #fff;
+    margin-top: 16px;
+}
+.left{
+    display: flex;
+}
+label a{
+    color: #ff0303;
+    text-decoration: none;
+}
+
+.error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+
+</style>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Harry | InfoTech Login</title>
+</head>
+<body>
+    <div class="box">
+        <div class="container">
+            <div class="top-header">
+                <br>
+
+                <header>User Login</header>
+            </div>
+
+            <div class="input-field">
+                <input id="Username" type="text" class="input" placeholder="Username" required>
+                <i class="bx bx-user" style="color: #f5f5f5;"></i>
+                <div id="error-message" class="error-message"></div>
+
+
+            </div>
+            <div class="input-field">
+                <input type="password" class="input" placeholder="Password" required id="password">
+                <i class="bx bx-lock-alt"style="color: #f5f5f5;"></i>
+                <div id="password-error-message" class="error-message"></div>
+            </div>
+
+            
+            <div class="input-field">
+                <input type="submit" class="submit" value="Login">
+            </div>
+ 
+
+            <div class="bottom">
+                <div class="left">
+                    <input type="checkbox"  id="check">
+                    <label for="check"> <br> Forgot password</label>
+                </div>
+
+                <div class="right">
+                    
+                </div>
+                <p class="small mb-0">Don't have an account? <a href="http://127.0.0.1:5500/register.html" style="color: rgb(255, 0, 0);"><br><style>
+a:hover {
+  background-color: yellow;
+}
+</style>Create an account</a></p>
+
+
+                <!-- <p class="small mb-0">Don't have account? <a href="http://127.0.0.1:5500/register.html"><br>Create an account</a></p> -->
+                
+
+            </div>
+        </div>
+        
+    </div>
+
+
+<script>
+
+document.getElementById('Username').addEventListener('input', function() {
+            var input = this.value;
+            var regex = /^[a-zA-Z]*$/;
+
+            if (!regex.test(input)) {
+                document.getElementById('error-message').innerText = 'Only alphabetic characters are allowed.';
+            } else {
+                document.getElementById('error-message').innerText = '';
+            }
+        });
+
+        document.getElementById('password').addEventListener('input', function() {
+            var password = this.value.trim(); // Trim leading and trailing whitespaces
+
+            if (password === '') {
+                document.getElementById('password-error-message').innerText = '';
+            } else {
+                // Check password strength (you can customize this criteria)
+            var regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+            if (!regex.test(password)) {
+                document.getElementById('password-error-message').innerText = 'Password must be at least 8 characters long and contain at least one letter, one number, and one special character.';
+            } else {
+                document.getElementById('password-error-message').innerText = '';
+            }
+            }
+        });
+
+
+</script>
+
+</body>
+</html>

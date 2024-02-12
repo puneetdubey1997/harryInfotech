@@ -1,0 +1,299 @@
+<style>
+
+
+
+ /* POPPINS FONT */
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    font-family: 'Poppins', sans serif;
+}
+body{
+    background-image: url("https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+.container{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 20px;
+}
+span{
+    color: #fff;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 10px 0;
+}
+header{
+    color: #fff;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+}
+.input-field{
+    display: inline-block;
+    margin-right: 10px; 
+    /* flex-direction: column; */
+}
+.input-field .input{
+    height: 45px;
+    width: 110%;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: #fffeff;
+    padding: 0 0 0 42px;
+    background: rgba(259, 294, 284, 0.4);
+    
+}
+
+
+i{
+    position: relative;
+    top: -31px;
+    left: 15px;
+    color: #f8f8f8;
+}
+::-webkit-input-placeholder{
+    color: #ffffff;
+}
+.submit{
+    border: none;
+    border-radius: 30px;
+    font-size: 17px;
+    height: 30px;
+    outline: none;
+    width: 100%;
+    background: srgba(255, 255, 255, 0.205);
+    cursor: pointer;
+    transition: .3s;
+    
+}
+.submit:hover{
+    box-shadow: 1px 5px 7px 1px rgb(249, 249, 249);
+}
+.bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: small;
+    color: #faf9f9;
+    margin-top: 2px;
+}
+.left{
+    display: flex;
+}
+label a{
+    color: d#ffffff;
+    text-decoration: none;
+}
+
+.error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+</style>
+
+
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Harry | InfoTech Sign Up</title>
+</head>
+<body>
+    <div class="box">
+        <div class="container">
+            <div class="top-header">
+
+                <header>Sign Up</header>
+            </div>
+
+            <div class="input-field">
+                <input type="text" class="input" required placeholder="FirstName" required style="width: 100%;" id="firstName">
+                <i class="bx bx-user"></i>
+                <div id="error-message" class="error-message"></div>
+            </div>
+            
+            <div class="input-field">
+                <input type="text" class="input" required placeholder="LastName" required style="width: 100%;" id="LastName">
+                <i class="bx bx-user input-icon"></i>
+                <div id="error-message-l" class="error-message"></div>
+            </div>
+            
+            <div class="input-field">
+                <input id= "email"  type="email" required class="input" placeholder="Email" required style="width: 100%;">
+                <i class="bx bx-envelope input-icon"></i>
+                <div id="email-error-message" class="error-message"></div>
+            </div>
+            
+            <div class="input-field">
+                <input id="mobileNumber" required type="tel" class="input"   placeholder="Mobile Number " required style="width: 100%;">
+                <i class="bx bx-phone input-icon"></i>
+                <div id="mobile-number-error-message" class="error-message"></div>
+            </div>
+            
+            <div class="input-field">
+                <input type="password" class="input" placeholder="Password" required style="width: 100%;" required id="password">
+                <i class="bx bx-lock-alt"></i>
+                <div id="password-error-message" class="error-message"></div>
+            </div>
+            
+            <div class="input-field">
+                <input type="text" class="input" placeholder="Confirm password" required style="width: 100%;" required id="confirmPassword">
+                <i class="bx bx-lock input-icon"></i>
+                <div id="confirm-password-error-message" class="error-message"></div>
+                <br>
+            </div>
+            
+                    <div class="bottom" >
+                        <div class="left">
+                            <input type="checkbox" id="check">  
+                            <label for="check"> Remember Me</label>
+                        </div>
+
+                 
+                        
+                        <!-- <p class="small mb-0">Already have an account? <a href="pages-login.html">Log in</a></p> -->
+                    
+                
+                    <div class="input-field">
+                        <input type="submit" class="submit" value="Submit">
+                        
+                    </div>
+
+                   
+                    
+
+                   
+
+                    
+                    
+                </div>
+
+
+                <p class="small mb-0" style="color: rgb(255, 255, 255);">Already have an account? <a href="http://127.0.0.1:5500/login.html" style="color: rgb(255, 30, 0);"><style>
+                    a:hover {
+                      background-color: yellow;
+                    }
+                    </style>Log in</a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('firstName').addEventListener('input', function() {
+            var input = this.value;
+            var regex = /^[a-zA-Z]*$/;
+
+            if (!regex.test(input)) {
+                document.getElementById('error-message').innerText = 'Only alphabetic characters are allowed.';
+            } else {
+                document.getElementById('error-message').innerText = '';
+            }
+        });
+
+        document.getElementById('LastName').addEventListener('input', function() {
+            var input = this.value;
+            var regex = /^[a-zA-Z]*$/;
+
+            if (!regex.test(input)) {
+                document.getElementById('error-message-l').innerText = 'Only alphabetic characters are allowed.';
+            } else {
+                document.getElementById('error-message-l').innerText = '';
+            }
+        });
+
+        document.getElementById('email').addEventListener('input', function() {
+            var email = this.value.trim(); // Trim leading and trailing whitespaces
+
+            if (email === '') {
+                document.getElementById('email-error-message').innerText = '';
+            } else {
+                var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!regex.test(email)) {
+                    document.getElementById('email-error-message').innerText = 'Enter a valid email address.';
+                } else {
+                    document.getElementById('email-error-message').innerText = '';
+                }
+            }
+        });
+
+        document.getElementById('mobileNumber').addEventListener('input', function() {
+            var mobileNumber = this.value.trim(); // Trim leading and trailing whitespaces
+
+            if (mobileNumber === '') {
+                document.getElementById('mobile-number-error-message').innerText = '';
+            } else {
+                var regex = /^[0-9]{0,10}$/;
+
+                if (!regex.test(mobileNumber)) {
+                    document.getElementById('mobile-number-error-message').innerText = 'Enter a valid 10-digit mobile number.';
+                } else {
+                    document.getElementById('mobile-number-error-message').innerText = '';
+                }
+            }
+        });
+
+
+        function validatePassword() {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                document.getElementById('confirm-password-error-message').innerText = 'Passwords do not match.';
+            } else {
+                document.getElementById('confirm-password-error-message').innerText = '';
+            }
+
+            // Check password strength (you can customize this criteria)
+            var regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+            if (!regex.test(password)) {
+                document.getElementById('password-error-message').innerText = 'Password must be at least 8 characters long and contain at least one letter, one number, and one special character.';
+            } else {
+                document.getElementById('password-error-message').innerText = '';
+            }
+        }
+
+        // Add event listeners
+        document.getElementById('password').addEventListener('input', validatePassword);
+        document.getElementById('confirmPassword').addEventListener('input', validatePassword);
+
+        // document.getElementById('email').addEventListener('input', function() {
+        //     var email = this.value;
+        //     var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        //     if (!regex.test(email)) {
+        //         document.getElementById('email-error-message').innerText = 'Enter a valid email address.';
+        //     } else {
+        //         document.getElementById('email-error-message').innerText = '';
+        //     }
+        // });
+
+    </script>
+    
+</body>
+</html>
